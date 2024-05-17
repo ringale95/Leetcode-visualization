@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Array Indexing</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Array Indexing</h1>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>What is a Multi-dimensional array?</h2>
+                <p>Multi-dimensional arrays in Java are arrays that contain arrays as their elements, allowing for more
+                    complex data structures such as matrices or tables</p>
+                <p> The most common type of multi-dimensional array is the two-dimensional array, but arrays of three or
+                    more dimensions can also be created. </p>
+
+                <h2> How to access multi-dimensional array?</h2>
+                <p>We use two indices: one for row and other for column <br />
+                    <code>
+                        int element = matrix[1][2]; //Accessing <br />
+                        matrix[2][3] = 13; //Modifying <br />
+                    </code>
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <h3>How to declare and initialize multi-dimensional array?</h3>
+                <p> Declaring 2-D array:
+                    <code>
+                        matrix = new int[3][3]; <br />
+                        int[][] matrix = {<br />
+                        {1,2,3},<br />
+                        {4,5,6},<br />
+                        {7,8,9}
+                        };
+                    </code>
+                </p>
+                <h2> How to iterate through multi-dimensional array?</h2>
+                <p> We can use nested loop to iterate through each of the element</p>
+                <code>
+                    for(int i = 0; i
+                    < matrix.length; i++){ <br />
+                    for (int j = 0; j
+                    < matrix[i].length; j++){<br />
+                    System.out.println("Element at [" + i + "][" + j + "] = " + matrix[i][j]);<br />
+                    }
+                    }
+                </code>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3>Let's create an array:</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="array-count" placeholder="Enter array size">
+                    <button class="btn btn-primary" id="create-array">Create!</button>
+                </div>
+                <div id="array-container" class="d-flex flex-nowrap overflow-auto"></div>
+            </div>
+            <div class="col-md-6">
+                <h3>Search Array:</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="index-count" placeholder="Enter index">
+                    <button class="btn btn-primary" id="search-array">Search</button>
+                </div>
+                <input class="form-control" id="output-value" placeholder="Value at index" readonly>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
