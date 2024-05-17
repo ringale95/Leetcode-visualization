@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Array Indexing</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Array Indexing</h1>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>What is an array?</h2>
+                <p>An array is a contiguous set of memory locations containing the same datatype for a specified number
+                    of locations.</p>
+                <p> <strong>Array indexing</strong> refers to the process of accessing individual elements within an
+                    array by their
+                    position or index.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>How to initialize an array in Java?</h3>
+                <code class="mb-3">
+                    int[] arr = new int[5];<br />
+                    int[] myArray = {1, 2, 3, 4, 5};<br />
+                </code>
+                <h3>Java code to access the value at index</h3>
+                <p> There are different ways:
+                    <br>
+                    <li>Direct access by Index: myArray[0]</li>
+                    <li>For loop: </br>
+                        <code>
+                            for(int i=0; i < myArray.length; i++) </br> System.out.println(myArray[i]); </code> </li>
+                                <li>For:each loop
+                                <br>
+                                <code>
+                                    int index = 0;
+                                    for(int number : myArray)
+                                    System.out.println("Element at index" + index + ":" +number); </br>
+                                    index++
+                                </code>
+                    </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3>Let's create an array:</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="array-count" placeholder="Enter array size">
+                    <button class="btn btn-primary" id="create-array">Create!</button>
+                </div>
+                <div id="array-container" class="d-flex flex-nowrap overflow-auto"></div>
+            </div>
+            <div class="col-md-6">
+                <h3>Search Array:</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="index-count" placeholder="Enter index">
+                    <button class="btn btn-primary" id="search-array">Search</button>
+                </div>
+                <input type="text" class="form-control" id="output-value" placeholder="Value at index" readonly>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
