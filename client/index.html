@@ -52,11 +52,24 @@
         <div class="row mb-4">
             <div class="col-md-6">
                 <h3>Let's create an array:</h3>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="array-count" placeholder="Enter array size">
-                    <button class="btn btn-primary" id="create-array">Create!</button>
-                </div>
+                <form id="create-array-form">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="array-count" name="array-count"
+                            placeholder="Enter array size">
+                        <button type="submit" class="btn btn-primary" id="create-array"
+                            name="create-array">Create!</button>
+                    </div>
+                </form>
                 <div id="array-container" class="d-flex flex-nowrap overflow-auto"></div>
+                <div>
+                    <button class="btn btn-primary mt-5" id="save" name="save">Save your input</button>
+                    <button class="btn btn-primary mt-5" id="modify-array" name="modify-array">Modify the
+                        array!</button>
+                    <button class="btn btn-primary mt-5" id="smallest-number" name="smallest-number">Find
+                        Smallest?</button>
+                    <button class="btn btn-primary mt-5" id="largest-number" name="smallest-number">Find
+                        Largest?</button>
+                </div>
             </div>
             <div class="col-md-6">
                 <h3>Search Array:</h3>
@@ -64,13 +77,20 @@
                     <input type="text" class="form-control" id="index-count" placeholder="Enter index">
                     <button class="btn btn-primary" id="search-array">Search</button>
                 </div>
-                <input type="text" class="form-control" id="output-value" placeholder="Value at index" readonly>
-            </div>
-        </div>
-    </div>
+                <input class="form-control" id="output-value" placeholder="Value at index" readonly>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="index.js"></script>
+                <form id="search-by-index">
+                    <div class="input-group mb-3 mt-3">
+                        <input type="text" class="form-control" id="search-index" name="search-index"
+                            placeholder="Enter array index to be searched!">
+                        <button type="submit" class="btn btn-primary" id="search-array-by-index"
+                            name="search-array-by-index">Search!</button>
+                    </div>
+                    <div id="output-value-index" placeholder="Value at index" </div> </form> </div> </div> </div>
+                        <script
+                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+                        </script>
+                        <script type="module" src="index.js"></script>
 </body>
 
 </html>

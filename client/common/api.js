@@ -73,8 +73,8 @@ const makeRequest = (url, method, data, onSuccess, onError) => {
 
       // Step 3 - Create a FormData object and append the form data
       const data = new FormData();
-      data.append("file", formData.file);
-      data.append("type", formData.type);
+      data.append("array-count", formData['array-count']);
+
 
       // Step 4 - Send the request
       xhr.send(data);
