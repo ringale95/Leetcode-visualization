@@ -24,7 +24,7 @@ const makeRequest = (url, method, data, onSuccess, onError) => {
 		onSuccess(responseData);
 	  } else {
 		// Error response
-		onError(xhr.statusText);
+		onError(xhr.responseText);
 	  }
 	};
 
@@ -74,8 +74,9 @@ const makeRequest = (url, method, data, onSuccess, onError) => {
       // Step 3 - Create a FormData object and append the form data
       const data = new FormData();
       data.append("array-count", formData['array-count']);
+      data.append("target", formData.target);
 
-
+      console.log(`Data Sent ${data.target}`);
       // Step 4 - Send the request
       xhr.send(data);
   };

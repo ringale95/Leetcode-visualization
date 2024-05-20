@@ -6,6 +6,9 @@ const onPageLoad = () => {
     const form = document.getElementById('create-array-form');
     form.addEventListener('submit', onCreateArrayClick);
 
+    const targetForm = document.getElementById('find-target-form');
+    targetForm.addEventListener('submit', onTargetFormSubmit);
+
     const searchArrayButton = document.getElementById('search-array');
     searchArrayButton.addEventListener('click', onSearchArrayClick);
 
@@ -22,7 +25,20 @@ const onPageLoad = () => {
     findSmallestBtn.addEventListener('click', findSmallestElementFromArray)
 
     const findLargestElement = document.getElementById('largest-number');
-    findLargestElement.addEventListener('click', findLargest)
+    findLargestElement.addEventListener('click', findLargest);
+
+    const findAvgNum = document.getElementById('avg-number');
+    findAvgNum.addEventListener('click', findAvg);
+
+    const findDuplicateBtn = document.getElementById('find-duplicate');
+    findDuplicateBtn.addEventListener('click', findDuplicates);
+
+    const findDuplicateFasterBtn = document.getElementById('find-duplicate-faster');
+    findDuplicateFasterBtn.addEventListener('click', findDuplicateFaster);
+
+    const findDuplicateFastestBtn = document.getElementById('find-duplicate-fastest');
+    findDuplicateFastestBtn.addEventListener('submit', findDuplicateFastest);
+    
 };
 
 const onCreateArrayClick = (event) => {
@@ -103,6 +119,19 @@ const searchByIndex = (event) => {
     
 };
 
+const onTargetFormSubmit =(event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+    const onSuccess = (response) =>{
+        window.alert("Found at" + response);
+    }
+
+    makeRequestFormData("http://localhost:8080/find-target", 'GET', data, onSuccess, (err)=>{window.alert(err);});
+
+}
+
 const onClickModifyBtn = () => {
     const onSuccess = (response) => {
         const arrayContainer = document.getElementById('array-container');
@@ -142,5 +171,35 @@ const findLargest = () => {
     makeRequest("http://localhost:8080/largest-element", 'GET', arr, onSuccess, () => window.alert('Operation failed!.'));
 }
 
+const findAvg = () => {
+    const onSuccess = (response) => {
+        window.alert("Average is " + response);
+    }
+    makeRequest("http://localhost:8080/find-avg", 'GET', arr, onSuccess, () => window.alert('Operation failed!.'));
+}
 
+const findDuplicates = () => {
+    const onSuccess = (response) => {
+        window.alert("Duplicate found! at" + response);
+    }
+    makeRequest("http://localhost:8080/find-duplicate", 'GET', arr, onSuccess, (err) => window.alert (err));
+}
+
+const findDuplicateFaster = () => {
+    const onSuccess = (response) => {
+        window.alert("Duplicate found! at " + response);
+    }
+    makeRequest("http://localhost:8080/find-duplicate-faster", 'GET', arr, onSuccess, (err) => window.alert (err));
+}
+
+const findDuplicateFastest = () => {
+    const onSuccess = (response) => {
+        window.alert("Duplicate found! at " + response);
+    }
+    makeRequest("http://localhost:8080/find-duplicate-fastest", 'GET', arr, onSuccess, (err) => window.alert (err));
+}
+
+
+
+ 
 document.addEventListener('DOMContentLoaded', onPageLoad);
